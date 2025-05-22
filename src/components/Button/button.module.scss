@@ -1,0 +1,37 @@
+@use "sass:color";
+@use "@/styles/variables" as *;
+
+.button {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: 0;
+  transition: 0.2s;
+  cursor: pointer;
+  background-color: $color-secondary-white;
+  fill: $color-primary-black;
+
+  &:hover {
+    background-color: color.adjust($color-secondary-white, $lightness: -10%);
+  }
+
+  &:active {
+    background-color: color.adjust($color-secondary-white, $lightness: -15%);
+  }
+
+  html[data-theme="dark"] & {
+    background-color: $color-secondary-black;
+    fill: $color-primary-light-gray;
+
+    &:hover {
+      background-color: color.adjust($color-secondary-black, $lightness: 10%);
+    }
+
+    &:active {
+      background-color: color.adjust($color-secondary-black, $lightness: 15%);
+    }
+  }
+}

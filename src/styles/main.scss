@@ -1,0 +1,9 @@
+@use "reset-css";
+@use "variables" as *;
+
+body {
+  background-color: white;
+  html[data-theme="dark"] & {
+    background-color: $color-primary-black;
+  }
+}

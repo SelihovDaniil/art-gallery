@@ -1,0 +1,160 @@
+@use "@/styles/variables" as *;
+@use "@/styles/fonts" as *;
+
+.card {
+  width: 280px;
+  height: 185px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+
+  &:hover .image {
+    transform: scale(1.2);
+  }
+
+  &:hover .bottom {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  &:hover .left {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: 0.6s ease;
+}
+
+.animation_box {
+  position: relative;
+  overflow: hidden;
+  z-index: 5;
+  width: 236px;
+  height: 45px;
+  background-color: white;
+
+  html[data-theme="dark"] & {
+    background-color: $color-primary-black;
+  }
+}
+
+.bottom {
+  padding: 8px 12px;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.6s ease;
+  gap: 4px;
+}
+
+.left {
+  padding: 8px 12px;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  transition: 0.6s ease;
+  transform: translateX(-100%);
+}
+
+.title {
+  @extend .cormorant;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: $color-primary-black;
+  html[data-theme="dark"] & {
+    color: $color-primary-light-gray;
+  }
+}
+
+.undertitle {
+  @extend .inter;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 8px;
+  color: $color-accent-red;
+  html[data-theme="dark"] & {
+    color: $color-accent-gold;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    width: 352px;
+    height: 220px;
+  }
+
+  .animation_box {
+    width: 300px;
+    height: 66px;
+  }
+
+  .bottom {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .left {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .undertitle {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .card {
+    width: 392;
+    height: 260px;
+  }
+
+  .animation_box {
+    height: 82px;
+  }
+
+  .bottom {
+    padding: 20px;
+  }
+
+  .left {
+    padding: 20px;
+  }
+
+  .line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+
+    span {
+      display: block;
+      width: 2px;
+      height: 42px;
+      background-color: $color-accent-red;
+      html[data-theme="dark"] & {
+        background-color: $color-accent-gold;
+      }
+    }
+  }
+}

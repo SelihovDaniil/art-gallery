@@ -1,0 +1,59 @@
+@use "@/styles/variables" as *;
+@use "@/styles/fonts" as *;
+
+.dots {
+  @extend .inter;
+  color: $color-primary-dark-gray;
+  padding: 1px 8px;
+  html[data-theme="dark"] & {
+    color: $color-primary-light-gray;
+  }
+}
+
+.button {
+  @extend .inter;
+  position: relative;
+  padding: 1px 8px;
+  border: 0;
+  background: transparent;
+  &:not(.active) {
+    cursor: pointer;
+  }
+  color: $color-primary-dark-gray;
+  fill: $color-primary-dark-gray;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  transition: 0.2s;
+
+  &:hover:not(.active) {
+    border-bottom: 1px solid $color-secondary-gray;
+    font-weight: 500;
+  }
+
+  html[data-theme="dark"] & {
+    color: $color-primary-light-gray;
+    fill: $color-primary-light-gray;
+    &:hover:not(.active) {
+      border-bottom: 1px solid $color-primary-dark-gray;
+    }
+  }
+}
+
+.active {
+  font-weight: 500;
+  html[data-theme="dark"] & {
+    background-color: $color-secondary-black;
+    border-radius: $border-radius;
+  }
+}
+
+.pagination {
+  display: flex;
+  gap: 20px;
+}
+
+.wrapper {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
