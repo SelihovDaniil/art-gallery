@@ -1,5 +1,11 @@
 @use "@/styles/variables" as *;
 
+.wrapper {
+  margin-top: 44px;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .search {
   position: relative;
   max-width: 340px;

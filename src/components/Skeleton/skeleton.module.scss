@@ -1,0 +1,45 @@
+@use "@/styles/variables" as *;
+
+@keyframes skeleton-pulse-light {
+  0% {
+    background-color: $color-secondary-gray;
+  }
+  50% {
+    background-color: $color-primary-light-gray;
+  }
+  100% {
+    background-color: $color-secondary-gray;
+  }
+}
+
+@keyframes skeleton-pulse-dark {
+  0% {
+    background-color: $color-secondary-black;
+  }
+  50% {
+    background-color: $color-primary-dark-gray;
+  }
+  100% {
+    background-color: $color-secondary-black;
+  }
+}
+
+.skeleton {
+  height: 185px;
+  animation: skeleton-pulse-light 1.5s ease-in-out infinite;
+  html[data-theme="dark"] & {
+    animation: skeleton-pulse-dark 1.5s ease-in-out infinite;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .skeleton {
+    height: 220px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .skeleton {
+    height: 260px;
+  }
+}

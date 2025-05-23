@@ -2,7 +2,7 @@
 @use "variables" as *;
 
 body {
-  background-color: white;
+  background-color: $color-primary-white;
   html[data-theme="dark"] & {
     background-color: $color-primary-black;
   }

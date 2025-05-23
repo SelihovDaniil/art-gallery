@@ -1,0 +1,43 @@
+@use "@/styles/variables" as *;
+@use "@/styles/fonts" as *;
+
+.wrapper {
+  margin-top: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @media screen and (min-width: 768px) {
+    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 1280px) {
+    gap: 32px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.title {
+  @extend .inter;
+  font-size: 16px;
+
+  color: $color-primary-dark-gray;
+  .query {
+    font-weight: 500;
+  }
+
+  html[data-theme="dark"] & {
+    color: $color-primary-light-gray;
+  }
+}
+
+.description {
+  @extend .inter;
+  margin-top: 12px;
+  color: $color-secondary-gray;
+  font-size: 14px;
+}

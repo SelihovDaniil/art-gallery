@@ -2,7 +2,6 @@
 @use "@/styles/fonts" as *;
 
 .card {
-  width: 280px;
   height: 185px;
   position: relative;
   display: flex;
@@ -93,7 +92,6 @@
 
 @media screen and (min-width: 768px) {
   .card {
-    width: 352px;
     height: 220px;
   }
 
@@ -123,7 +121,6 @@
 
 @media screen and (min-width: 1440px) {
   .card {
-    width: 392;
     height: 260px;
   }
 

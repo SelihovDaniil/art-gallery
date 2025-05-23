@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Button from "@/components/Button";
-import Container from "@/components/Container";
 import { Dark, Light, Logo } from "@/components/Icons";
 import styles from "./header.module.scss";
 
@@ -23,13 +22,9 @@ export default function Header() {
   };
 
   return (
-    <nav>
-      <Container>
-        <div className={styles.header}>
-          <Logo className={styles.logo} />
-          <Button onClick={toggleTheme}>{theme === "dark" ? <Dark /> : <Light />}</Button>
-        </div>
-      </Container>
+    <nav className={styles.header}>
+      <Logo className={styles.logo} />
+      <Button onClick={toggleTheme}>{theme === "dark" ? <Dark /> : <Light />}</Button>
     </nav>
   );
 }
